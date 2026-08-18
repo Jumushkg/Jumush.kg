@@ -274,5 +274,31 @@
 
 </footer>
 
-</body>
+</body><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://klwpznlmiofxjivihofu.supabase.co";
+const SUPABASE_KEY = "sb_publishable_DhlS-KxDGwPtaWEkgYC5jw_gUaOaw-6";
+
+const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+async function loadJobs() {
+    const { data, error } = await supabaseClient
+        .from("jobs")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+    if (error) {
+        console.error("Ошибка загрузки вакансий:", error);
+        return;
+    }
+
+    console.log("Вакансии:", data);
+}
+
+loadJobs();
+</script>
     </html>
