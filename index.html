@@ -283,7 +283,22 @@ const SUPABASE_KEY = "sb_publishable_DhlS-KxDGwPtaWEkgYC5jw_gUaOaw-6";
 const supabaseClient = supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
-);
+);<script>
+async function testSupabase() {
+    const { data, error } = await supabaseClient
+        .from("jobs")
+        .select("id")
+        .limit(1);
+
+    if (error) {
+        console.error("Supabase error:", error);
+    } else {
+        console.log("Supabase connected:", data);
+    }
+}
+
+testSupabase();
+</script>
 
 async function loadJobs() {
     const { data, error } = await supabaseClient
