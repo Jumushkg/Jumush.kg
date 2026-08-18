@@ -3,21 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Jumush.kg — Работа в Кыргызстане</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #172033;
+        }
+
+        header {
+            background: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #1769ff;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        .hero {
+            background: #1769ff;
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            margin-bottom: 35px;
+        }
+
+        .search-box {
+            max-width: 950px;
+            margin: auto;
+            background: white;
+            padding: 12px;
+            border-radius: 12px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box input,
+        .search-box select {
+            flex: 1;
+            padding: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .search-box button {
+            background: #172033;
+            color: white;
+            border: none;
+            padding: 0 28px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: 45px auto;
+            padding: 0 20px;
+        }
+
+        .section h2 {
+            margin-bottom: 25px;
+        }
+
+        .jobs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .job {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .job h3 {
+            margin-bottom: 12px;
+        }
+
+        .company {
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .salary {
+            color: #1769ff;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .city {
+            color: #777;
+        }
+
+        .employer {
+            background: white;
+            text-align: center;
+            padding: 45px 20px;
+            margin-top: 30px;
+        }
+
+        .employer button {
+            margin-top: 20px;
+            padding: 14px 25px;
+            background: #1769ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #172033;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 750px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            nav a {
+                margin-left: 10px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-box button {
+                padding: 15px;
+            }
+
+            .jobs {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Jumush.kg</h1>
-    <h2>Найди работу в Кыргызстане</h2>
 
-    <input type="text" placeholder="Должность или профессия">
-    <input type="text" placeholder="Город">
+<header>
+    <div class="logo">Jumush.kg</div>
 
-    <button>Найти работу</button>
+    <nav>
+        <a href="#">Найти работу</a>
+        <a href="#">Войти</a>
+        <a href="#">Регистрация</a>
+    </nav>
+</header>
 
-    <hr>
+<section class="hero">
 
-    <h2>Работодатель?</h2>
+    <h1>Найди работу в Кыргызстане</h1>
+
+    <p>Вакансии от работодателей со всей страны</p>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            placeholder="Должность, профессия или ключевое слово"
+        >
+
+        <select>
+            <option>Все города</option>
+            <option>Бишкек</option>
+            <option>Ош</option>
+            <option>Токмок</option>
+            <option>Каракол</option>
+            <option>Джалал-Абад</option>
+            <option>Нарын</option>
+            <option>Талас</option>
+            <option>Баткен</option>
+        </select>
+
+        <button>Найти работу</button>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>Свежие вакансии</h2>
+
+    <div class="jobs">
+
+        <div class="job">
+            <h3>Водитель категории B</h3>
+            <div class="company">Компания «Пример»</div>
+            <div class="salary">50 000 — 70 000 сом</div>
+            <div class="city">📍 Бишкек</div>
+        </div>
+
+        <div class="job">
+            <h3>Менеджер по продажам</h3>
+            <div class="company">Компания «Пример»</div>
+            <div class="salary">40 000 — 80 000 сом</div>
+            <div class="city">📍 Бишкек</div>
+        </div>
+
+        <div class="job">
+            <h3>Курьер</h3>
+            <div class="company">Компания «Пример»</div>
+            <div class="salary">35 000 — 60 000 сом</div>
+            <div class="city">📍 Ош</div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="employer">
+
+    <h2>Ищете сотрудников?</h2>
+
+    <p>Разместите вакансию и найдите подходящего сотрудника.</p>
+
     <button>Разместить вакансию</button>
+
+</section>
+
+<footer>
+
+    © 2026 Jumush.kg — Работа в Кыргызстане
+
+</footer>
+
 </body>
-</html>
+    </html>
